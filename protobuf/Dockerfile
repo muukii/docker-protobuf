@@ -8,7 +8,7 @@ ENV PROTOBUF_DIR protobuf
 
 WORKDIR /tmp
 
-RUN apk add --update git build-base autoconf automake libtool libstdc++
+RUN apk add --update git build-base autoconf automake libtool libstdc++ \
     && rm -rf /var/cache/apk/*
 
 RUN git clone ${PROTOBUF_REPOSITORY} -b v${PROTOBUF_VERSION} --depth 1 ./${PROTOBUF_DIR} \
