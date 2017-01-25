@@ -1,4 +1,21 @@
-```bash
-$ docker run -it --rm kaneshin/protobuf --help
-$ docker run -it --rm -v $PWD:/src:rw kaneshin/protobuf *.proto
-```
+# Protocol Buffer on Docker
+
+[![Docker Stars](https://img.shields.io/docker/stars/kaneshin/protobuf.svg)](https://hub.docker.com/r/kaneshin/protobuf/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaneshin/protobuf.svg)](https://hub.docker.com/r/kaneshin/protobuf/)
+[![Docker Automated buil](https://img.shields.io/docker/automated/kaneshin/protobuf.svg)](https://hub.docker.com/r/kaneshin/protobuf/)
+
+## Usage
+
+    # print help message of protoc
+    docker run -it --rm kaneshin/protobuf --help
+
+    # execute to output files.
+    docker run -it --rm -v $PWD:/src:rw kaneshin/protobuf *.proto
+
+## License
+
+[The MIT License (MIT)](http://kaneshin.mit-license.org/)
+
+## Author
+
+Shintaro Kaneko <kaneshin0120@gmail.com>

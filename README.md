@@ -1,9 +1,9 @@
-# Protocol Buffer for Docker
+# Docker Images of Protocol Buffer
 
-## License:
+## License
 
 [The MIT License (MIT)](http://kaneshin.mit-license.org/)
 
-## Author:
+## Author
 
 Shintaro Kaneko <kaneshin0120@gmail.com>
