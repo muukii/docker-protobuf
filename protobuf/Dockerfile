@@ -8,13 +8,12 @@ ENV PROTOBUF_DIR protobuf
 
 WORKDIR /tmp
 
-RUN apk add --update git build-base autoconf automake libtool libstdc++ \
+RUN apk add --update git curl build-base autoconf automake libtool libstdc++ \
     && rm -rf /var/cache/apk/*
 
 RUN git clone ${PROTOBUF_REPOSITORY} -b v${PROTOBUF_VERSION} --depth 1 ./${PROTOBUF_DIR} \
-    && cd ./${PROTOBUF_DIR}
-
-RUN ./autogen.sh \
+    && cd ./${PROTOBUF_DIR} \
+    && ./autogen.sh \
     && ./configure --prefix=/usr \
     && make -j 4 \
     && make install
