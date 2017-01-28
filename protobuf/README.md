@@ -10,7 +10,7 @@
     docker run -it --rm kaneshin/protobuf --help
 
     # execute to output files.
-    docker run -it --rm -v $PWD:/src:rw kaneshin/protobuf *.proto
+    docker run -it --rm -v $PWD:/proto:rw kaneshin/protobuf *.proto
 
 ## License
 
