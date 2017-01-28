@@ -20,4 +20,7 @@ RUN git clone ${PROTOBUF_REPOSITORY} -b v${PROTOBUF_VERSION} --depth 1 ./${PROTO
 
 RUN rm -rf ./${PROTOBUF_DIR}
 
+ADD . /proto
+WORKDIR /proto
+
 ENTRYPOINT ["protoc"]
