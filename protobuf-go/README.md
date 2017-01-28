@@ -10,7 +10,7 @@
     docker run -it --rm kaneshin/protobuf-go --help
 
     # execute to output files.
-    docker run -it --rm -v $PWD:/src:rw kaneshin/protobuf-go --go_out=. *.proto
+    docker run -it --rm -v $PWD:/proto:rw kaneshin/protobuf-go --go_out=. *.proto
 
 ## License
 
