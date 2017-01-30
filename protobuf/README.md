@@ -12,6 +12,9 @@
     # execute to output files.
     docker run -it --rm -v $PWD:/proto:rw kaneshin/protobuf *.proto
 
+    # execute to output files by user.
+    docker run -it --rm -v $PWD:/proto:rw kaneshin/protobuf -u $(id -u):$(id -g) *.proto
+
 ## License
 
 [The MIT License (MIT)](http://kaneshin.mit-license.org/)

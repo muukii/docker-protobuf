@@ -14,7 +14,7 @@
     docker run -it --rm -v $PWD:/proto:rw kaneshin/protobuf-go --go_out=. *.proto
 
     # execute to output files by user.
-    docker run -it --rm -v -u $(id -u):$(id -g) $PWD:/src:rw kaneshin/protobuf-go --go_out=. *.proto
+    docker run -it --rm -v $PWD:/proto:rw kaneshin/protobuf-go -u $(id -u):$(id -g) --go_out=. *.proto
 
 ## License
 
