@@ -4,8 +4,8 @@ MAINTAINER muukii <m@muukii.me>
 
 WORKDIR ~/local
 
-RUN apt-get -q update update
-RUN apt-get -q install -y install zip unzip wget
+RUN apt-get -q update
+RUN apt-get -q install -y zip unzip wget
 
 ENV SWIFT_PROTOBUF_TAG 0.9.26
 
