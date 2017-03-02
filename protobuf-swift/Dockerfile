@@ -2,15 +2,15 @@ FROM swiftdocker/swift:3.0.2
 
 MAINTAINER muukii <m@muukii.me>
 
-WORKDIR ./local
+WORKDIR ~/local
 
 RUN apt-get update
-RUN apt-get install zip unzip
+RUN apt-get install zip unzip wget
 
 ENV SWIFT_PROTOBUF_TAG 0.9.26
 
 RUN git clone --depth=1 -b $SWIFT_PROTOBUF_TAG https://github.com/apple/swift-protobuf.git
 RUN cd ./swift-protobuf && swift build --configuration release
 
-RUN curl -L https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip -O ./protocprotoc-3.2.0-linux-x86_64.zip
+RUN wget https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip
 RUN unzip protocprotoc-3.2.0-linux-x86_64.zip -d ./protoc
