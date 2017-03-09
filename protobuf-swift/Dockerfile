@@ -20,4 +20,4 @@ ENV PATH $PATH:./protobuf/bin/protoc
 ADD . /proto
 WORKDIR /proto
 
-ENTRYPOINT ["~/local/protobuf/bin/protoc"]
+ENTRYPOINT ["protoc"]
