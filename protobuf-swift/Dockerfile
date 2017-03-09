@@ -14,4 +14,9 @@ RUN git clone --depth=1 -b $SWIFT_PROTOBUF_TAG https://github.com/apple/swift-pr
 RUN cd ./swift-protobuf && swift build --configuration release
 
 RUN wget https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip
-RUN unzip protoc-3.2.0-linux-x86_64.zip -d ./protoc
+RUN unzip protoc-3.2.0-linux-x86_64.zip -d ./protobuf
+
+ADD . /proto
+WORKDIR /proto
+
+ENTRYPOINT ["~/local/protobuf/bin/protoc"]
