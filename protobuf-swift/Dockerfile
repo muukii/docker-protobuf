@@ -20,4 +20,4 @@ ENV PATH $PATH:/local/protobuf/bin/protoc
 ADD . /proto
 WORKDIR /proto
 
-ENTRYPOINT ["/local/protobuf/bin/protoc"]
+ENTRYPOINT ["/local/protobuf/bin/protoc", "--plugin=/local/swift-protobuf/.build/release/protoc-gen-swift"]
