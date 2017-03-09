@@ -15,9 +15,9 @@ RUN cd ./swift-protobuf && swift build --configuration release
 
 RUN wget https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip
 RUN unzip protoc-3.2.0-linux-x86_64.zip -d ./protobuf
-ENV PATH $PATH:./protobuf/bin/protoc
+ENV PATH $PATH:/local/protobuf/bin/protoc
 
 ADD . /proto
 WORKDIR /proto
 
-ENTRYPOINT ["protoc"]
+ENTRYPOINT ["/local/protobuf/bin/protoc"]
