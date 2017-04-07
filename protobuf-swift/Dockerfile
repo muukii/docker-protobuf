@@ -1,4 +1,4 @@
-FROM swiftdocker/swift:3.1.0
+FROM swift:3.1.0
 
 MAINTAINER muukii <m@muukii.me>
 
