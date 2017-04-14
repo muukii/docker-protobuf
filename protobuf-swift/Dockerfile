@@ -11,7 +11,7 @@ ENV TAG master
 ENV PATH $PATH:/local/swift-protobuf/.build/release/protoc-gen-swift
 
 RUN git clone --depth=1 -b $TAG https://github.com/apple/swift-protobuf.git
-RUN cd ./swift-protobuf && swift build
+RUN cd ./swift-protobuf && swift build --configuration release
 
 RUN wget https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip
 RUN unzip protoc-3.2.0-linux-x86_64.zip -d ./protobuf
