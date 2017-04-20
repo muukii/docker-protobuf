@@ -8,16 +8,13 @@ RUN apt-get -q update
 RUN apt-get -q install -y zip unzip wget
 
 ENV TAG master 
-ENV PATH $PATH:/local/swift-protobuf/.build/release/protoc-gen-swift
 
 RUN git clone --depth=1 -b $TAG https://github.com/apple/swift-protobuf.git
 RUN cd ./swift-protobuf && swift build --configuration release
 
-RUN wget https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip
-RUN unzip protoc-3.2.0-linux-x86_64.zip -d ./protobuf
-ENV PATH $PATH:/local/protobuf/bin/protoc
+RUN wget -O protoc.zip https://github.com/google/protobuf/releases/download/v4.2.0/protoc-3.2.0-linux-x86_64.zip
+RUN unzip protoc.zip -d ./protobuf
+RUN rm -rf protoc.zip
 
-ADD . /proto
-WORKDIR /proto
-
+WORKDIR /
 ENTRYPOINT ["/local/protobuf/bin/protoc", "--plugin=/local/swift-protobuf/.build/release/protoc-gen-swift"]
