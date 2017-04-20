@@ -12,7 +12,7 @@ ENV TAG master
 RUN git clone --depth=1 -b $TAG https://github.com/apple/swift-protobuf.git
 RUN cd ./swift-protobuf && swift build --configuration release
 
-RUN wget -O protoc.zip https://github.com/google/protobuf/releases/download/v4.2.0/protoc-3.2.0-linux-x86_64.zip
+RUN wget -o protoc.zip https://github.com/google/protobuf/releases/download/v4.2.0/protoc-3.2.0-linux-x86_64.zip
 RUN unzip protoc.zip -d ./protobuf
 RUN rm -rf protoc.zip
 
