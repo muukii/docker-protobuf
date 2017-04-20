@@ -16,5 +16,7 @@ RUN wget https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.
 RUN unzip protobuf.zip -d ./protobuf
 RUN rm -rf protobuf.zip
 
-WORKDIR /
+ADD . /proto
+WORKDIR /proto
+
 ENTRYPOINT ["/local/protobuf/bin/protoc", "--plugin=/local/swift-protobuf/.build/release/protoc-gen-swift"]
