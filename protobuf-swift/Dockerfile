@@ -10,7 +10,7 @@ RUN apt-get -q install -y zip unzip wget
 ENV TAG "0.9.901"
 
 RUN git clone --depth=1 -b $TAG https://github.com/apple/swift-protobuf.git
-RUN cd ./swift-protobuf && swift build -c release -Xswiftc -static-stdlib
+RUN cd ./swift-protobuf && swift build -c release # -Xswiftc -static-stdlib
 RUN cp ./swift-protobuf/.build/release/protoc-gen-swift /usr/local/bin/protoc-gen-swift
 
 RUN wget https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip -O protobuf.zip
