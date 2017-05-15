@@ -21,4 +21,4 @@ RUN cp ./protobuf/bin/protoc /usr/local/bin/protoc
 ADD . /proto
 WORKDIR /proto
 
-ENTRYPOINT ["protoc", "--plugin=protoc-gen-swift"]
+ENTRYPOINT ["protoc"]
